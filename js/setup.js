@@ -23,13 +23,13 @@ var getRandomValue = function (array) {
 };
 
 var getRandomWizardArray = function (length) {
-  var wizardArray = [length];
+  var wizardArray = [];
   for (var i = 0; i < length; i++) {
-    wizardArray[i] = {
+    wizardArray.push({
       name: getName(),
       coatColor: getCoatColor(),
       eyesColor: getEyesColor()
-    };
+    });
   }
   return wizardArray;
 };
@@ -52,9 +52,10 @@ var renderWizard = function (wizard) {
 };
 
 var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
-}
+wizards.forEach(function (element) {
+  fragment.appendChild(renderWizard(element));
+});
+
 similarListElement.appendChild(fragment);
 
 userDialog.classList.remove('hidden');
