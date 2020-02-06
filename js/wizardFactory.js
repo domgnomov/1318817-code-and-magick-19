@@ -46,5 +46,5 @@
   window.wizardFactory = {
     init: init,
     showSimilarWizards: showSimilarWizards
-  }
+  };
 })();

@@ -6,5 +6,3 @@
   window.setupDialog.init();
 })();
 
-
-

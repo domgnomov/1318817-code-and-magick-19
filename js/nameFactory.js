@@ -5,10 +5,10 @@
   var WIZARD_SECOND_NAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
   var getWizardName = function () {
-    return util.getRandomValue(WIZARD_FIRST_NAMES) + ' ' + util.getRandomValue(WIZARD_SECOND_NAMES);
+    return window.util.getRandomValue(WIZARD_FIRST_NAMES) + ' ' + window.util.getRandomValue(WIZARD_SECOND_NAMES);
   };
 
   window.nameFactory = {
     getWizardName: getWizardName
-  }
+  };
 })();

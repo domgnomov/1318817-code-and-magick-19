@@ -6,7 +6,7 @@
   var wizardEyesElement = setupWizardElement.querySelector('.wizard-eyes');
   var fireballElement = document.querySelector('.setup-fireball-wrap');
 
-  var init = function() {
+  var init = function () {
     wizardCoatElement.addEventListener('click', function () {
       wizardCoatElement.style.fill = window.colorFactory.getCoatColor();
     });
@@ -25,5 +25,5 @@
 
   window.wizardSettings = {
     init: init
-  }
+  };
 })();

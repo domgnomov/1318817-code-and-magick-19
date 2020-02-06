@@ -21,5 +21,5 @@
     getEyesColor: getEyesColor,
     getCoatColor: getCoatColor,
     getFireballColor: getFireballColor
-  }
+  };
 })();

@@ -7,5 +7,5 @@
 
   window.util = {
     getRandomValue: getRandomValue
-  }
+  };
 })();

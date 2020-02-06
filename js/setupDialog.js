@@ -60,7 +60,9 @@
 
   var initSetupUserNameElement = function () {
     setupUserNameElement.addEventListener('keydown', function (evt) {
-      window.keyboardUtil.isEscEvent(evt, function(evt){evt.stopPropagation()});
+      window.keyboardUtil.isEscEvent(evt, function (keyEvt) {
+        keyEvt.stopPropagation();
+      });
     });
   };
 
@@ -74,5 +76,5 @@
 
   window.setupDialog = {
     init: init
-  }
+  };
 })();
