@@ -28,11 +28,14 @@
     setupElement.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
     window.wizardFactory.showSimilarWizards();
+    window.setupDialogMoving.initDefaultPosition();
   };
 
   var closeSetupDialog = function () {
     setupElement.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
+    window.setupDialogMoving.setDefaultPosition();
+
   };
 
   var initOpenSetupDialogEvent = function () {
@@ -66,6 +69,7 @@
     initCloseSetupDialogEvent();
     initSetupUserNameElement();
     initValidation();
+    window.setupDialogMoving.init();
   };
 
   window.setupDialog = {
