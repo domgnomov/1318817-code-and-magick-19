@@ -5,6 +5,7 @@
   var setupOpenElement = document.querySelector('.setup-open');
   var setupCloseElement = setupElement.querySelector('.setup-close');
   var setupUserNameElement = setupElement.querySelector('.setup-user-name');
+  var setupFormElement = setupElement.querySelector('.setup-wizard-form');
 
   var initValidation = function () {
     setupUserNameElement.addEventListener('input', function () {
@@ -27,7 +28,8 @@
   var openSetupDialog = function () {
     setupElement.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
-    window.wizardFactory.showSimilarWizards();
+    window.wizardData.getWizardData();
+    window.wizardData.showSimilarWizards();
     window.setupDialogMoving.initDefaultPosition();
   };
 
@@ -66,11 +68,21 @@
     });
   };
 
+  var initSubmitFormElement = function () {
+    setupFormElement.addEventListener('submit', function (evt) {
+      window.backend.save(new FormData(setupFormElement), function () {
+        setupElement.classList.add('hidden');
+      });
+      evt.preventDefault();
+    });
+  };
+
   var init = function () {
     initOpenSetupDialogEvent();
     initCloseSetupDialogEvent();
     initSetupUserNameElement();
     initValidation();
+    initSubmitFormElement();
     window.setupDialogMoving.init();
   };
 
