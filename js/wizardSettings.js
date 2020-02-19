@@ -8,7 +8,7 @@
 
   var init = function () {
     var debounce = window.debounce(window.wizardData.updateSimilarWizards);
-    
+
     wizardCoatElement.addEventListener('click', function () {
       wizardCoatElement.style.fill = window.colorFactory.getCoatColor();
       debounce();
