@@ -7,12 +7,16 @@
   var fireballElement = document.querySelector('.setup-fireball-wrap');
 
   var init = function () {
+    var debounce = window.debounce(window.wizardData.updateSimilarWizards);
+
     wizardCoatElement.addEventListener('click', function () {
       wizardCoatElement.style.fill = window.colorFactory.getCoatColor();
+      debounce();
     });
 
     wizardEyesElement.addEventListener('click', function () {
       wizardEyesElement.style.fill = window.colorFactory.getEyesColor();
+      debounce();
     });
 
     fireballElement.addEventListener('click', function () {
@@ -23,7 +27,17 @@
     });
   };
 
+  var getWizardCoatColor = function () {
+    return wizardCoatElement.style.fill;
+  };
+
+  var getWizardEyesColor = function () {
+    return wizardEyesElement.style.fill;
+  };
+
   window.wizardSettings = {
-    init: init
+    init: init,
+    getWizardCoatColor: getWizardCoatColor,
+    getWizardEyesColor: getWizardEyesColor
   };
 })();
