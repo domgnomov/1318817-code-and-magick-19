@@ -37,7 +37,6 @@
     setupElement.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
     window.setupDialogMoving.setDefaultPosition();
- 
   };
 
   var initOpenSetupDialogEvent = function () {
